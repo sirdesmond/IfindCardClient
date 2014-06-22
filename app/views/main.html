@@ -1,0 +1,37 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">IfindCard</h3>
+</div>
+
+<h1>Login Page</h1>
+
+<form ng-submit="login(username, password)">
+  <label>User name</label>
+  <input type="text" ng-model="username" class="ng-pristine ng-valid">
+  <br>
+  <label>Password</label>
+  <input type="password" ng-model="password" class="ng-pristine ng-valid">
+  <br>
+  <h4><input type="checkbox" ng-model="rememberMe">   Remember Me</h4> 
+
+  {{tasks}}
+  <h3>These are my tasks for the day:</h3>
+  <ul ng-repeat="task in tasks.tasks">
+    <li>{{task.title}} - {{task.description}}</li>
+  </ul>
+  {{loginError}}  {{loggedUser}}
+  <br/><br/>
+
+  <button class="btn btn-success" ng-click="">Submit</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</form>
+
+
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> &copy;2014 IfindCard</p>
+</div>
