@@ -9,7 +9,7 @@
 
 <h1>Login Page</h1>
 
-<form ng-submit="login(username, password)">
+<form ng-submit="login()">
   <label>User name</label>
   <input type="text" ng-model="username" class="ng-pristine ng-valid">
   <br>
@@ -18,13 +18,12 @@
   <br>
   <h4><input type="checkbox" ng-model="rememberMe">   Remember Me</h4> 
 
-  {{tasks}}
-  <h3>These are my tasks for the day:</h3>
-  <ul ng-repeat="task in tasks.tasks">
-    <li>{{task.title}} - {{task.description}}</li>
-  </ul>
-  {{loginError}}  {{loggedUser}}
-  <br/><br/>
+  <div ng-show="response.valid">
+    <h2>You are now logged in!!</h2>
+  </div>
+    <div ng-show="(response.error==unauthorized)">
+    <h2>Unauthorized Access!!</h2>
+  </div>
 
   <button class="btn btn-success" ng-click="">Submit</button>
   <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
